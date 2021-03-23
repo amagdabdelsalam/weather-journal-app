@@ -1,0 +1,90 @@
+body{
+    background-color: #6dd3e7;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.app {
+    display: flow-root;
+    color: #FFF;
+    padding: 20px;
+    background-color: #2c3e50;
+    margin: 100px auto;
+    max-width: 650px;
+    border-radius: 15px;
+}
+.app h1 {
+    border: 1px solid;
+    padding: 15px;
+    border-radius: 60px;
+    text-align: center;
+}
+.app input, textarea {
+    padding: 5px;
+    background-color: #1212;
+    display: block;
+    margin: 5px 0 5px 30px;
+    color: gray;
+    outline: none;
+}
+.app .entry-holder {
+    float: left;
+    width: 40%;
+    overflow: hidden;
+}
+.app .entry-holder input {
+    float: right;
+    width: 83%;
+}
+.app .entry-holder button {
+    float: right;
+    padding: 8px;
+    background-color: #FFF;
+    border: none;
+    border-radius: 4px;
+    color: gray;
+    cursor: pointer;
+}
+.app .data-holder {
+    float: right;
+    width: 60%;
+    overflow: hidden;
+}
+.app .data-holder .viewer {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+.app .data-holder img {
+    padding: 20px 0;
+    height: 45px;
+    display:block;
+    margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .app .entry-holder {
+        display: block;
+        width: 100%;
+
+    }
+    .app .data-holder {
+        display: block;
+        width: 100%;
+    }
+  }
+
+
+  /* Loading data animation */
+  .loading {
+    animation: spin 3s ease;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Journal</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="app text-center">
+        <h1>Weather Journal App</h1>
+        <div class="entry-holder">
+          <div class ="zip">
+            <label for="zip">Enter Zipcode here: *</label>
+            <input type="number" id="zip" placeholder="Enter zip code here">
+          </div>
+          <div class ="feel">
+            <label for="feelings">How are you feeling today?</label>
+            <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="29"></textarea>
+            <button id="generate" type = "submit"> Generate </button>
+          </div> 
+        </div>
+        <div class="data-holder">
+          <div class="viewer">
+            <img id='loading' src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQTYwMDsiIGQ9Ik01MDcuODM0LDMwMS42MDhsLTU0Ljc2OS00OC4zMTJsNTIuODMyLTUwLjM5OWMxLjk0MS0xLjg1MiwyLjc0LTQuNTkxLDIuMDk5LTcuMTg5DQoJYy0wLjY0Mi0yLjU5Ny0yLjYyOS00LjY1NS01LjIxMS01LjQwMWwtNzAuMzE2LTIwLjI5MmwyNS45ODgtNjguMDU2YzAuOTU1LTIuNSwwLjQ5NS01LjMxNi0xLjIwNC03LjM4OQ0KCWMtMS43LTIuMDcyLTQuMzgzLTMuMDg1LTcuMDM4LTIuNjU3bC03Mi4yNzQsMTEuNjUybC01Ljg3OC03Mi41NjFjLTAuMjE2LTIuNjY2LTEuODQ2LTUuMDE1LTQuMjc1LTYuMTYxDQoJYy0yLjQyOS0xLjE0Ni01LjI5MS0wLjkxNy03LjUwNCwwLjYwMWwtNjAuMjY2LDQxLjM0MkwyNjMuNDA5LDMuNzQyQzI2Mi4wNjQsMS40MjYsMjU5LjU3OSwwLDI1Ni44ODksMA0KCWMtMi42OSwwLTUuMTc0LDEuNDI2LTYuNTE5LDMuNzQyTDIwOC4zNDcsNzYuMTFsLTcyLjY5LTQxLjk1M2MtMi4zMjctMS4zNDMtNS4xOTctMS4zNDktNy41MjgtMC4wMTgNCgljLTIuMzMzLDEuMzMxLTMuNzczLDMuNzk5LTMuNzgsNi40NzNsLTAuMTc2LDcyLjc5NWwtNzIuOTY1LTYuMDE0Yy0yLjY3NS0wLjIyLTUuMjc1LDAuOTk3LTYuODA3LDMuMTk0DQoJYy0xLjUzMywyLjE5Ny0xLjc3MSw1LjA0MS0wLjYyMiw3LjQ1OWwzMS4yNDIsNjUuODM1TDYuNTA4LDIwOS41NjJjLTIuNTE2LDAuOTQzLTQuMzM1LDMuMTUtNC43NzMsNS43ODkNCgljLTAuNDM4LDIuNjM4LDAuNTc1LDUuMzA4LDIuNjU2LDcuMDAzbDU2LjYxOSw0Ni4xNTJsLTUwLjgxMyw1Mi40MWMtMS44NjYsMS45MjUtMi41NTksNC42OTQtMS44MTYsNy4yNjQNCgljMC43NDQsMi41NywyLjgxLDQuNTUsNS40MTksNS4xOTRsNzEuMDU1LDE3LjU1MUw2MS41Niw0MTkuOTM2Yy0wLjg1NiwyLjUzNS0wLjI4Niw1LjMzMSwxLjQ5NCw3LjMzNg0KCWMxLjc4MSwyLjAwNSw0LjUwMiwyLjkxMyw3LjEzNywyLjM4Mmw3MS43Ni0xNC40NDNsOC43MjEsNzIuMjc4YzAuMzE5LDIuNjU1LDIuMDQxLDQuOTM4LDQuNTEzLDUuOTkNCgljMi40NzQsMS4wNTIsNS4zMjMsMC43MTIsNy40NzUtMC44OTFsNTguNTk2LTQzLjY0N2wzOS4wNTUsNTkuNTY2YzEuMzgyLDIuMTc5LDMuNzg5LDMuNDkyLDYuMzY3LDMuNDkyDQoJYzAuMDk4LDAsMC4xOTYtMC4wMDIsMC4yOTUtMC4wMDZjMi42ODctMC4xMDQsNS4xMTUtMS42MjYsNi4zNjgtMy45OTJsMzQuMTA3LTYyLjQwNWw2MS44MzksMzguOTc0DQoJYzIuMjczLDEuNDMyLDUuMTM3LDEuNTUsNy41MjIsMC4zMWMyLjM4Mi0xLjI0LDMuOTE5LTMuNjUsNC4wMy02LjMyMmwzLjAzMS03Mi43MzRsNzIuNjc0LDguODRjMi42NjQsMC4zMjQsNS4zMS0wLjc5MSw2LjkyOC0yLjkyNw0KCWMxLjYxOC0yLjEzNywxLjk2Ni00Ljk2OSwwLjkxNC03LjQzbC0yOC42MzYtNjYuOTk3bDY5LjQ2NS0yMy4wMDNjMi41NTItMC44NDUsNC40NTYtMi45NzksNC45OTctNS41OTkNCglDNTEwLjc1MiwzMDYuMDksNTA5Ljg0NSwzMDMuMzgzLDUwNy44MzQsMzAxLjYwOHoiLz4NCjxlbGxpcHNlIHN0eWxlPSJmaWxsOiNGRkRCMkQ7IiBjeD0iMjU0LjM1IiBjeT0iMjU0LjY5MSIgcng9IjE1NS4wNjkiIHJ5PSIxNTQuOTQ5Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojRkZDQTAwOyIgZD0iTTI1NC4zNTQsOTkuNzQzYy0zLjg4NCwwLTcuNzMyLDAuMTQ3LTExLjU0MywwLjQyOGM4MC4yNSw1LjkwMSwxNDMuNTI1LDcyLjgyNSwxNDMuNTI1LDE1NC41MjENCgljMCw4MS42OTUtNjMuMjc1LDE0OC42MTktMTQzLjUyNSwxNTQuNTIxYzMuODExLDAuMjgsNy42NiwwLjQyOCwxMS41NDMsMC40MjhjODUuNjQxLDAsMTU1LjA2OC02OS4zNzMsMTU1LjA2OC0xNTQuOTQ4DQoJQzQwOS40MjIsMTY5LjExNiwzMzkuOTk1LDk5Ljc0MywyNTQuMzU0LDk5Ljc0M3oiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" />
+            <p id="data-placeholder">tell us where you are...</p>
+            <strong id="temp"></strong>
+            <p id='date'></p>
+            <p id='user-feelings'></p>
+          </div>
+        </div>
+    </div>
+  </div> 
+  <script src="app.js" type="text/javascript"></script>
+</body>
+
+</html>
+
+
+<!-- <div id = "app">
+  <div class ="holder headline">
+    Weather Journal App
+  </div>
+  <div class ="holder zip">
+    <label for="zip">Enter Zipcode here</label>
+    <input type="text" id="zip" placeholder="enter zip code here">
+  </div>
+  <div class ="holder feel">
+    <label for="feelings">How are you feeling today?</label>
+    <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
+    <button id="generate" type = "submit"> Generate </button>
+  </div>
+  <div class ="holder entry">
+    <div class = "title">Most Recent Entry</div>
+   <div id = "entryHolder">
+    <div id = "date"></div> 
+   <div id = "temp"></div>
+   <div id = "content"></div>
+  </div>
+  </div>
+  </div> -->
